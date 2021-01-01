@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>To Do List</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+</head>
+<body>
+  <div id="todo-container">
+
+      <div id="todo-header" >
+        <i class="fa fa-list-alt" aria-hidden="true"></i>
+        <span> TODO APP</span>
+      </div>
+          <form action="/create-todo"  method="POST">
+      <div id="description">
+        <span>DESCRIPTION</span>
+        <input  type="text" id="desc" name="desc" placeholder="What do you need to do?" required>
+      </div>
+      <div id="cat-date-container">
+        <div id="category-container">
+           <span>CATEGORY </span>
+           
+           <select  name="category" id="cat" required=>
+            <option disabled selected>Choose a category</option>
+            <option >Personal</option>
+            <option >Work</option>
+            <option >College</option>
+           </select>
+
+        </div>
+       <hr >
+       <div id="date-container">
+          <span>DUE DATE</span>
+          <input id="date" name="date" type="date" placeholder="dd/mm/yyyy" required>
+       </div>
+      </div>
+
+      <div id="button-container">
+        <button  id="add" type="submit"  ><i class="fa fa-plus" aria-hidden="true"></i>
+          ADD TASK</button> 
+        <a id="delete"><button type="button"  id="delete_btn"  ><i class="fa fa-trash" aria-hidden="true"></i>
+          DELETE TASKS</button></a>
+      </div>
+    </form>
+
+
+
+     <p id="status">You have currently  <b><span id="count"> </span></b>  pending</p>
+     <a  id="select-all" href="">select all</a>
+     <div id="results-container">
+      <% for(let i of todolist) {%>
+        <div id="results" >
+           <div id="checkbox">
+               <input type="checkbox" value="<%= i._id %>"> 
+           </div>       
+
+           <div id="res_desc_date">
+                <p> <%= i.description %></p>
+                <p id="result_date"> <i class="fa fa-calendar"></i>  
+                   <%=i.date%> </p>
+
+           </div>
+          <div id="result_cat_container">
+             <div id="category_box">
+              <%=i.category%> 
+             </div>      
+             <span style="font-size: 0.6rem;">Added on <%= date %></span>
+
+          </div>
+       </div>
+   <% } %> 
+
+    </div>
+  </div>
+    
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

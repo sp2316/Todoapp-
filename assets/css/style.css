@@ -1,0 +1,243 @@
+body{
+    margin-top:0px;
+    background-image: linear-gradient( to right,yellow,red);
+}
+/* The overall todo container */
+#todo-container{
+    border:3px solid darkmagenta;
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: auto;
+    max-height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    background-color: whitesmoke;
+    
+}
+
+/* To-Do Header */
+#todo-header{
+    margin-top:20px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0.2rem;
+    margin-bottom: 10px;
+
+}
+/* font awesome style */
+#todo-header i{
+    color:crimson;
+}
+
+/* All inputs in form */
+form input{
+    width:300px;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.1rem;
+    /* margin-bottom: 5px; */
+    border-width: 0 0 0 0;
+    background-color: inherit;   
+    color: grey;
+    padding-left:4px;
+
+}
+
+/* labels */
+form span{
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-bottom:2px;
+    padding-left: 2px;
+}
+/* description container */
+#description{
+    border-top:1px solid gray;
+    border-bottom:1px solid gray;
+    transition: 1s ease-in;
+}
+/* label */
+#description span{
+    padding-top:22px;
+}
+/* description input field */
+#desc {
+    height: 30px;
+    width:90%;
+    
+}
+
+/* Category and date parent container */
+#cat-date-container{
+    display: flex;
+    max-height: 70px;
+    border-bottom:1px solid gray;
+    margin-bottom:25px;
+
+}
+
+/* category container */
+#category-container{
+    flex-grow: 1;
+    transition: 0.5s all;
+}
+/* label catergory */
+#category-container span{
+    padding-top:17px;
+}
+/* the vertical line */
+hr{
+    margin-top:-1px;
+    height: 69px;
+}
+/* Category Select Dropdown */
+#cat{
+    height: 30px;
+    font-size: 1.2rem;
+    color: grey;
+    border-width: 0 0 0 0;
+    background-color: inherit;
+    outline: none;
+
+}
+
+/* for date  */
+#date-container{
+    padding-top:17px;
+    transition: 0.5s all;
+
+}
+#date{
+    color:gray;
+
+}
+
+/* button container  */
+#button-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+/* Common styling to all buttons present in the form */
+form button{
+    width:150px;
+    height: 50px;
+    outline: none;
+    margin-bottom: 5px;
+}
+/* add button */
+#add{
+    background-image: linear-gradient(to right,lightblue,violet);
+    transition:1s background-color;
+    border-radius: 50px;
+    box-shadow: 0px 0px 2px 2px orange;
+
+}
+#add:hover{
+    background-image: none;
+    background-color: lightgoldenrodyellow;
+}
+/* delete button */
+#delete_btn{
+    background-image: linear-gradient(black,brown);
+    color:lightyellow;
+    transition:1s background-color ;
+    border-radius: 50px;
+   box-shadow: 0px 0px 2px 2px green;
+
+}
+#delete_btn:hover{
+    background-image: none;
+    background-color: darkslategrey;
+}
+/* The status of number of tasks to do */
+#status{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#select-all{
+    color:rgb(49, 47, 42);
+    text-decoration: none;
+    text-shadow:1px 1px  red;
+    font-size: 1.1rem;
+    display: none;
+}
+
+/* The Results Container  */
+#results-container{
+    margin-top:10px;
+    overflow: scroll;
+   
+}
+#results{
+    display: flex;
+   height: 100px;
+
+}
+#results:nth-child(2n){
+    border-bottom: 1px solid darkmagenta;
+
+}
+#results:nth-child(2n+1){
+    background-color: white;
+    border-bottom: 1px solid gold;
+
+}
+#results div{
+ width:150px;
+ height:90px;
+ word-wrap: break-word;
+ overflow: scroll;
+} 
+
+#checkbox input{
+    margin-top:20px;
+    margin-left: 20px;
+    box-shadow: 0px 0px 1px 1px;
+    outline: none;
+    color:skyblue;
+}
+#res_desc_date{
+    flex-grow: 1;
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#res_desc_date i{
+    font-size:0.8rem;
+    color:gray;
+}
+#result_date{
+font-size: 0.8rem;
+font-weight: bolder;
+
+
+}
+#result_cat_container #category_box{
+    margin-top:20px;
+    text-align: center;
+    padding:15px;
+    width: 60px;
+    color:wheat;
+    height: 20px;
+    border:1px solid red;
+    background-image: linear-gradient(darkblue,darkmagenta);
+}
+
+/* result category */
+#category{
+    border:1px solid red;
+    height: 30px;
+    position: relative;
+}
+
+@media screen and (max-width:500px){
+    #todo-container{
+       width:auto;
+    }
+}
